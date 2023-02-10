@@ -35,14 +35,15 @@ class _HomePageState extends State<HomePage> {
               height: 50,
               padding: const EdgeInsets.only(top: 10.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    height: 50,
+                    alignment: Alignment.topLeft,
+                    height: 100,
                     padding: const EdgeInsets.all(0),
                     color: Colors.transparent,
-                    width: 100,
+                    width: 50,
                     child: Image.asset(
                       "images/logo.png",
                       fit: BoxFit.cover,
@@ -59,27 +60,46 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                ],
-              ),
-            ),
-            //!  Know more and login
-            SizedBox(
-              height: 40,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Spacer(),
-                  const Text(
-                    "How does it work?",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-                  ),
                   TextButton(
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                      ),
+                      // border
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          side: BorderSide(
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ),
                     onPressed: () {},
-                    child: Text("Sign in"),
+                    child: Text("Login"),
                   ),
                 ],
               ),
             ),
+            const SizedBox(height: 10),
+            // //!  Know more and login
+            // SizedBox(
+            //   height: 40,
+            //   child: Row(
+            //     mainAxisSize: MainAxisSize.min,
+            //     children: [
+            //       Spacer(),
+            //       const Text(
+            //         "How does it work?",
+            //         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            //       ),
+            //       TextButton(
+            //         onPressed: () {},
+            //         child: Text("Sign in"),
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
             Container(
               height: size.height * 0.4,
@@ -131,18 +151,18 @@ class _HomePageState extends State<HomePage> {
             // SizedBox(height: 10),
             // const Divider(),
 
-            YoutubePlayer(
-              controller: _controller,
-              showVideoProgressIndicator: true,
-              progressIndicatorColor: Colors.amber,
-              progressColors: ProgressBarColors(
-                playedColor: Colors.amber,
-                handleColor: Colors.amberAccent,
-              ),
-              onReady: () {
-                _controller.addListener(() {});
-              },
-            ),
+            // YoutubePlayer(
+            //   controller: _controller,
+            //   showVideoProgressIndicator: true,
+            //   progressIndicatorColor: Colors.amber,
+            //   progressColors: ProgressBarColors(
+            //     playedColor: Colors.amber,
+            //     handleColor: Colors.amberAccent,
+            //   ),
+            //   onReady: () {
+            //     _controller.addListener(() {});
+            //   },
+            // ),
             // ! Video player ends
 
             // !Donation Raiser
