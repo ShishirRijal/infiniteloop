@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:infiniteloop/screens/homepage/homepage.dart';
 
 void main() {
-  runApp(DonationApp());
+  runApp(const DonationApp());
 }
 
 class DonationApp extends StatelessWidget {
@@ -13,11 +13,10 @@ class DonationApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xff2791F2),
+        primaryColor: const Color(0xff2791F2),
         // fontFamily: 'Poppins',
       ),
       home: const HomePage(),
     );
-    ;
   }
 }

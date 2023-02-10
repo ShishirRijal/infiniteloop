@@ -40,40 +40,44 @@ Widget RaiserCard(String imageUrl, String title, String Address, String Story) {
     onTap: () {},
     child: Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 212, 210, 210),
+        color: Color.fromARGB(255, 242, 242, 242),
         borderRadius: BorderRadius.all(
-          Radius.circular(12),
+          Radius.circular(8),
         ),
       ),
       child: SizedBox(
         height: 230,
         width: 150,
-        child: Padding(
-          padding: EdgeInsets.all(5),
-          child: Column(
-            children: [
-              Container(
-                height: 95,
-                width: 150,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(imageUrl), fit: BoxFit.fill),
+        child: Column(
+          children: [
+            Container(
+              height: 95,
+              // width: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(8),
+                  topRight: Radius.circular(8),
                 ),
+                image: DecorationImage(
+                    image: AssetImage(imageUrl), fit: BoxFit.fill),
               ),
-              SizedBox(height: 3),
-              Column(
+            ),
+            SizedBox(height: 3),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,
                       style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
                       )),
                   SizedBox(height: 2),
                   Text(
                     Address,
                     style: const TextStyle(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -106,8 +110,8 @@ Widget RaiserCard(String imageUrl, String title, String Address, String Story) {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     ),
